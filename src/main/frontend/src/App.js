@@ -34,7 +34,7 @@ function App() {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">{message}</h1>
                 <Link to="/posts">
-                    <button>Go to Posts</button>
+                    <button>게시판 이동</button>
                 </Link>
                 <Routes>
                     <Route path="/posts" element={<Post />} />
