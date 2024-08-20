@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import MastersList from './MastersList';
 import Board from './Board'; // Board 컴포넌트를 임포트
+import ProductDetail from './ProductDetail'; // ProductDetail 컴포넌트를 임포트
 
 function App() {
   const [message, setMessage] = useState("");
@@ -39,6 +40,9 @@ function App() {
             <p>
               <Link to="/board">게시판</Link> {/* 게시판으로 이동하는 링크 추가 */}
             </p>
+            <p>
+              <Link to="/products/1">상품상세페이지</Link> {/* 게시판으로 이동하는 링크 추가 */}
+            </p>
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
               <h1 className="App-title">{message}</h1>
@@ -50,6 +54,7 @@ function App() {
         } />
         <Route path="/masters" element={<MastersList />} />
         <Route path="/board" element={<Board />} /> {/* Board 컴포넌트에 대한 라우트 추가 */}
+        <Route path="/products/:pnum" element={<ProductDetail />} /> {/* ProductDetail 컴포넌트에 대한 라우트 추가 */}
       </Routes>
     </BrowserRouter>
   );
