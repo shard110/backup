@@ -28,4 +28,7 @@ public class Product {
 
     @Column(nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp pDate;
+
+    @Column(nullable = false)
+    private int pCate;
 }
