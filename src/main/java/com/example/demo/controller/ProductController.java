@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/api/products")
 @CrossOrigin("http://localhost:3000")
@@ -26,6 +27,11 @@ public class ProductController {
     @GetMapping("/{pnum}")
     public Product getProductById(@PathVariable("pnum") int pnum) {
         return productService.getProductById(pnum);
+    }
+
+    @GetMapping("/category/{categoryId}")
+    public List<Product> getProductsByCategory(@PathVariable("categoryId") int categoryId) {
+        return productService.getProductsByCategory(categoryId);
     }
 
     @PostMapping

@@ -19,12 +19,12 @@ public class ProductService {
     }
 
     public Product getProductById(int pnum) {
-        Optional<Product> product = productRepository.findById(pnum);
-        if (product.isPresent()) {
-            return product.get();
-        } else {
-            throw new RuntimeException("Product not found with id: " + pnum);
-        }
+        return productRepository.findById(pnum)
+            .orElseThrow(() -> new RuntimeException("Product not found with id: " + pnum));
+    }
+    
+    public List<Product> getProductsByCategory(int categoryId) {
+        return productRepository.findByPCate(categoryId);
     }
 
     public Product saveOrUpdateProduct(Product product) {

@@ -6,6 +6,7 @@ import './App.css';
 import MastersList from './MastersList';
 import Board from './Board'; // Board 컴포넌트를 임포트
 import ProductDetail from './ProductDetail'; // ProductDetail 컴포넌트를 임포트
+import Categories from './Categories'; // Categories 컴포넌트를 임포트
 
 function App() {
   const [message, setMessage] = useState("");
@@ -41,7 +42,10 @@ function App() {
               <Link to="/board">게시판</Link> {/* 게시판으로 이동하는 링크 추가 */}
             </p>
             <p>
-              <Link to="/products/1">상품상세페이지</Link> {/* 게시판으로 이동하는 링크 추가 */}
+              <Link to="/products/1">상품상세페이지</Link> {/* 상품상세페이지로 이동하는 링크 추가 */}
+            </p>
+            <p>
+              <Link to="/categories">카테고리 목록</Link> {/* 카테고리 목록으로 이동하는 링크 추가 */}
             </p>
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
@@ -55,6 +59,7 @@ function App() {
         <Route path="/masters" element={<MastersList />} />
         <Route path="/board" element={<Board />} /> {/* Board 컴포넌트에 대한 라우트 추가 */}
         <Route path="/products/:pnum" element={<ProductDetail />} /> {/* ProductDetail 컴포넌트에 대한 라우트 추가 */}
+        <Route path="/categories" element={<Categories />} /> {/* Categories 컴포넌트에 대한 라우트 추가 */}
       </Routes>
     </BrowserRouter>
   );
